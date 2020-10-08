@@ -1,21 +1,21 @@
 name: preprocess
 description: Performs the IOB preprocessing.
 inputs:
-- {name: Input 1 URI, type: String}
-- {name: Output x URI template, type: String}
-- {name: Output y URI template, type: String}
-- {name: Output preprocessing state URI template, type: String}
+- {name: Input 1 URI, type: GCS Path}
+- {name: Output x URI template, type: GCS Path}
+- {name: Output y URI template, type: GCS Path}
+- {name: Output preprocessing state URI template, type: GSC Path}
 outputs:
   - name: Output x URI
-    type: String
+    type: GSC Path
   - name: Output y URI
-    type: String
+    type: GSC Path
   - name: Output tags
     type: String
   - name: Output words
     type: String
   - name: Output preprocessing state URI
-    type: String
+    type: GSC Path
 implementation:
   container:
     image: gcr.io/<PROJECT-ID>/kubeflow/ner/preprocess:latest
